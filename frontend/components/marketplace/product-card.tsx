@@ -98,7 +98,7 @@ console.log(seller)
         </div>
       </CardContent>
       <CardFooter className="flex items-center justify-between border-t p-4">
-        <div className="text-lg font-bold text-purple-700">${price.toFixed(2)}</div>
+        <div className="text-lg font-bold text-purple-700"> ₹ {price.toFixed(2)}</div>
         <Button size="sm" className="gap-1">
           <ShoppingCart size={16} /> Add to Cart
         </Button>

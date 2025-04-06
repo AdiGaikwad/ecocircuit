@@ -18,7 +18,9 @@ const navLinks = [
   { href: "/e-waste-art", label: "E-Waste Art" },
   { href: "/blogs", label: "Blogs" },
   { href: "/contact", label: "Contact" },
+  { href: "/marketplace", label: "Market Place" },
   { href: "/locate", label: "Locate" },
+
 ]
 
 export function Navbar() {

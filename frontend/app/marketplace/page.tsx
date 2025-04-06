@@ -19,7 +19,7 @@ const featuredProducts = [
     title: "Circuit Board Wall Art - Geometric Pattern",
     price: 3500,
     originalPrice: 4500,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/shop/wall-art.jpg",
     category: "Art",
     condition: "New",
     rating: 4.8,
@@ -36,7 +36,7 @@ const featuredProducts = [
     id: "product2",
     title: "Upcycled Laptop Desk Lamp - Adjustable LED",
     price: 2200,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/shop/lamp.jpg",
     category: "Furniture",
     condition: "Like New",
     rating: 4.5,
@@ -53,7 +53,7 @@ const featuredProducts = [
     title: "Smartphone Component Jewelry Set - Necklace & Earrings",
     price: 1800,
     originalPrice: 2500,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/shop/mobile.avif",
     category: "Accessories",
     condition: "New",
     rating: 4.7,
@@ -69,7 +69,7 @@ const featuredProducts = [
     id: "product4",
     title: "Recycled Computer Memory Keychain",
     price: 450,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/shop/keychain.webp",
     category: "Accessories",
     condition: "New",
     rating: 4.3,
@@ -89,7 +89,7 @@ const allProducts = [
     id: "product5",
     title: "Vintage Keyboard Plant Holder - Succulent Planter",
     price: 1200,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/shop/vintage-keyboard.jpg",
     category: "Home Decor",
     condition: "Good",
     rating: 4.6,
@@ -104,7 +104,7 @@ const allProducts = [
     id: "product6",
     title: "Recycled CPU Coasters - Set of 4",
     price: 800,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/shop/coasters.jpg",
     category: "Home Decor",
     condition: "New",
     rating: 4.2,
@@ -119,7 +119,8 @@ const allProducts = [
     id: "product7",
     title: "Hard Drive Clock - Industrial Wall Clock",
     price: 1800,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/shop/clock.webp",
+
     category: "Home Decor",
     condition: "New",
     rating: 4.7,
@@ -135,7 +136,7 @@ const allProducts = [
     id: "product8",
     title: "Copper Wire from Recycled Electronics - 500g",
     price: 650,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/shop/copper.jpg",
     category: "Raw Materials",
     condition: "Good",
     rating: 4.4,
@@ -151,7 +152,7 @@ const allProducts = [
     title: "Smartphone Camera Lens Set - Macro Photography",
     price: 1500,
     originalPrice: 2000,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/shop/lens.jpg",
     category: "Components",
     condition: "Like New",
     rating: 4.1,
@@ -264,7 +265,7 @@ export default function MarketplacePage() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link href="/marketplace/create-listing">
+              <Link href="#">
                 <Button
                   variant="outline"
                   className="border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-6 text-lg"
@@ -289,7 +290,7 @@ export default function MarketplacePage() {
                   transition={{ duration: 0.5 }}
                   whileHover={{ y: -5 }}
                 >
-                  <Link href={`/marketplace/category/${category.id}`}>
+                  <Link href={`/marketplace/browse`}>
                     <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center hover:shadow-md transition-shadow h-full flex flex-col items-center justify-center">
                       <span className="text-3xl mb-3">{category.icon}</span>
                       <h3 className="font-medium">{category.name}</h3>
@@ -304,7 +305,7 @@ export default function MarketplacePage() {
           <div className="mb-12">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold">Featured Products</h2>
-              <Link href="/marketplace/featured">
+              <Link href="/marketplace/browse">
                 <Button variant="link" className="text-purple-600">
                   View All
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -313,9 +314,8 @@ export default function MarketplacePage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {featuredProducts.map((product) => (
-                <ProductCard   
-                seller={product.seller}
-                price={product.price} key={product.id}   />
+                <ProductCard   {...product}
+                key={product.id}   />
               ))}
             </div>
           </div>
@@ -323,22 +323,20 @@ export default function MarketplacePage() {
           {/* Search and Filter Section */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6">All Products</h2>
-            <SearchFilters onSearch={handleSearch} isMobile={isMobile} />
+            <SearchFilters onSearch={handleSearch} isMobile={true} />
 
             {isMobile ? (
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {filteredProducts.slice(0, 6).map((product) => (
                   <ProductCard key={product.id}    
-                      seller={product.seller}
-                      price={product.price} />
+                  {...product} />
                 ))}
               </div>
             ) : (
               <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 col-span-9">
                 {filteredProducts.slice(0, 9).map((product) => (
                   <ProductCard key={product.id}    
-                      seller={product.seller}
-                      price={product.price} />
+                  {...product} />
                 ))}
               </div>
             )}
@@ -385,16 +383,16 @@ export default function MarketplacePage() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="flex flex-col sm:flex-row gap-4 justify-center"
                 >
-                  <Link href="/marketplace/create-listing">
+                  <Link href="#">
                     <Button className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-6 text-lg w-full sm:w-auto">
                       Start Selling
                       <Plus className="ml-2 h-5 w-5" />
                     </Button>
                   </Link>
-                  <Link href="/marketplace/seller-guide">
+                  <Link href="#">
                     <Button
                       variant="outline"
-                      className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto"
+                      className="border-white hover:text-white bg-transparent  hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto"
                     >
                       Seller Guide
                     </Button>

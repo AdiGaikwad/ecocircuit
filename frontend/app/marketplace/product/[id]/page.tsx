@@ -206,7 +206,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   
   return (
     <main className="min-h-screen">
-      <Navbar />
       
       <div className="pt-24 pb-16 relative overflow-hidden">
         <GradientBlob
@@ -576,7 +575,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       
       <ShoppingCart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
       
-      <Footer />
     </main>
   );
 }
