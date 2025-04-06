@@ -4,9 +4,9 @@ import { Navbar } from "@/components/navbar";
 import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.dev",
+  title: "EcoCircuit | Recycle Reuse Earn...",
+  description: "EcoCircuit",
+  generator: "EcoCircuit",
 };
 
 export default function RootLayout({
@@ -16,6 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>
+          EcoCircuit - 
+        </title>
+      </head>
       <body>
         <AuthProvider>
 

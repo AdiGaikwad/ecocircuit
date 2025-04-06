@@ -53,8 +53,8 @@ export function CTASection() {
                 </Link>
                 <Link href="/locate">
                   <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto"
+                    // variant="outline"
+                    className="border-white bg-transparent text-white hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto"
                   >
                     Find Drop-off Points
                   </Button>

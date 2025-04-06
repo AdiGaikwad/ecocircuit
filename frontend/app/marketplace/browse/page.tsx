@@ -28,7 +28,7 @@ const allProducts = Array.from({ length: 24 }).map((_, index) => ({
   ][index % 12],
   price: Math.floor(Math.random() * 4000) + 300,
   originalPrice: Math.random() > 0.7 ? Math.floor(Math.random() * 5000) + 1000 : undefined,
-  image: "/placeholder.svg?height=300&width=300",
+  image: "/shop/e-waste.webp",
   category: ["Art", "Furniture", "Accessories", "Gadgets", "Components", "Raw Materials", "Home Decor"][index % 7],
   condition: ["New", "Like New", "Good", "Fair", "Salvage"][index % 5],
   rating: (Math.random() * 2 + 3).toFixed(1),
