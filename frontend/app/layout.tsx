@@ -16,11 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <title>
-          EcoCircuit - 
-        </title>
-      </head>
+      
       <body>
         <AuthProvider>
 

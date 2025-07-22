@@ -1,11 +1,11 @@
-"use client"
-import { motion } from "framer-motion"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Calendar, User, Search } from "lucide-react"
-import Link from "next/link"
-import { Input } from "@/components/ui/input"
+"use client";
+import { motion } from "framer-motion";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Calendar, User, Search } from "lucide-react";
+import Link from "next/link";
+import { Input } from "@/components/ui/input";
 
 const blogPosts = [
   {
@@ -33,7 +33,8 @@ const blogPosts = [
   {
     id: 3,
     title: "From Trash to Treasure: The Art of E-Waste Upcycling",
-    excerpt: "Explore creative projects that transform discarded electronics into beautiful and functional art pieces.",
+    excerpt:
+      "Explore creative projects that transform discarded electronics into beautiful and functional art pieces.",
     author: "Sophia Williams",
     date: "April 5, 2025",
     category: "Art & Design",
@@ -65,21 +66,29 @@ const blogPosts = [
   {
     id: 6,
     title: "E-Waste Legislation Around the World: A Comparative Study",
-    excerpt: "Analyzing how different countries are addressing the e-waste challenge through policy and regulation.",
+    excerpt:
+      "Analyzing how different countries are addressing the e-waste challenge through policy and regulation.",
     author: "Thomas Garcia",
     date: "March 15, 2025",
     category: "Policy",
     readTime: "10 min read",
     image: "e-waste-legislation",
   },
-]
+];
 
-const categories = ["All Categories", "Education", "Technology", "Art & Design", "Business", "Psychology", "Policy"]
+const categories = [
+  "All Categories",
+  "Education",
+  "Technology",
+  "Art & Design",
+  "Business",
+  "Psychology",
+  "Policy",
+];
 
 export default function BlogsPage() {
   return (
     <main className="min-h-screen">
-
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           <motion.div
@@ -90,7 +99,8 @@ export default function BlogsPage() {
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Blog</h1>
             <p className="text-xl text-gray-700 leading-relaxed">
-              Stay informed about e-waste management, sustainability innovations, and our latest initiatives.
+              Stay informed about e-waste management, sustainability
+              innovations, and our latest initiatives.
             </p>
           </motion.div>
 
@@ -98,7 +108,10 @@ export default function BlogsPage() {
             <div className="flex flex-col md:flex-row gap-4">
               <div className="relative flex-grow">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                <Input placeholder="Search articles..." className="pl-10 border-gray-300 focus:border-purple-500" />
+                <Input
+                  placeholder="Search articles..."
+                  className="pl-10 border-gray-300 focus:border-purple-500"
+                />
               </div>
               <div className="flex overflow-x-auto md:overflow-visible py-2 md:py-0 -mx-4 px-4 md:px-0 md:mx-0 space-x-2 md:space-x-4">
                 {categories.map((category, index) => (
@@ -136,9 +149,11 @@ export default function BlogsPage() {
                 </div>
                 <div className="p-6">
                   <h2 className="text-xl font-bold mb-3 hover:text-purple-600 transition-colors">
-                    <Link href={`/blogs/${post.id}`}>{post.title}</Link>
+                    <span>{post.title}</span>
                   </h2>
-                  <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
                   <div className="flex items-center text-sm text-gray-500 mb-4">
                     <div className="flex items-center mr-4">
                       <User className="h-4 w-4 mr-1" />
@@ -149,19 +164,25 @@ export default function BlogsPage() {
                       <span>{post.date}</span>
                     </div>
                   </div>
-                  <Link href={`/blogs/${post.id}`}>
-                    <Button variant="ghost" className="text-purple-600 hover:text-purple-700 hover:bg-purple-50 p-0">
+                  <span>
+                    <Button
+                      variant="ghost"
+                      className="text-purple-600 hover:text-purple-700 hover:bg-purple-50 p-0"
+                    >
                       Read more
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
-                  </Link>
+                  </span>
                 </div>
               </motion.div>
             ))}
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50">
+            <Button
+              variant="outline"
+              className="border-purple-600 text-purple-600 hover:bg-purple-50"
+            >
               Load More Articles
             </Button>
           </div>
@@ -171,13 +192,22 @@ export default function BlogsPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Subscribe to Our Newsletter</h2>
+            <h2 className="text-3xl font-bold mb-6">
+              Subscribe to Our Newsletter
+            </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Stay updated with the latest articles, e-waste management tips, and sustainability news.
+              Stay updated with the latest articles, e-waste management tips,
+              and sustainability news.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-              <Input type="email" placeholder="Enter your email" className="border-gray-300 focus:border-purple-500" />
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white">Subscribe</Button>
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                className="border-gray-300 focus:border-purple-500"
+              />
+              <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                Subscribe
+              </Button>
             </div>
           </div>
         </div>
@@ -185,6 +215,5 @@ export default function BlogsPage() {
 
       <Footer />
     </main>
-  )
+  );
 }
-

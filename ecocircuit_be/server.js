@@ -1,5 +1,3 @@
-
-
 import  cors from "cors"
 import mongoose from "mongoose"
 import { resolve } from "path";
@@ -18,7 +16,11 @@ const databaseurl = process.env.DATABASE_URL
 
 const app = express();
 
+<<<<<<< HEAD
 const PORT = 5002;
+=======
+const PORT = process.env.PORT | 5000;
+>>>>>>> b0d0e9799eacd8eb01ff260a96fdc6cafc25891d
 
 
 async function main ()

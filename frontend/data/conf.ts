@@ -8,7 +8,7 @@ interface Domains {
 
 let domains: Domains = {
     // AUTH_HOST: "http://localhost:5000"
-    AUTH_HOST: "https://ecocircuit.rocketrigs.in"
+    AUTH_HOST: "https://ecocircuitauth.rocketrigs.in"
 
 }
 
