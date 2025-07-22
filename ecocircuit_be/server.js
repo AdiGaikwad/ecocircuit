@@ -18,7 +18,7 @@ const databaseurl = process.env.DATABASE_URL
 
 const app = express();
 
-const PORT = 5000;
+const PORT = 5002;
 
 
 async function main ()
